@@ -1,8 +1,23 @@
 {
-  "name": "cold-war-forum",
+  "name": "mvc-tech-blog",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TannerCarter/mvc-tech-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TannerCarter/mvc-tech-blog/issues"
+  },
+  "homepage": "https://github.com/TannerCarter/mvc-tech-blog#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
@@ -14,21 +29,5 @@
     "nodemon": "^2.0.12",
     "sequelize": "^6.6.5",
     "tailwindcss": "^2.2.7"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TannerCarter/cold-war-forum.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TannerCarter/cold-war-forum/issues"
-  },
-  "homepage": "https://github.com/TannerCarter/cold-war-forum#readme"
+  }
 }
