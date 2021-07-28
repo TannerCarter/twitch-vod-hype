@@ -1,28 +1,32 @@
 {
-  "name": "cold_war_forum",
+  "name": "mvc-tech-blog",
   "version": "1.0.0",
-  "description": "A full stack web application where a user can register, browse in a book database, select books and add them to a purchasing cart.",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js"
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TannerCarter/mvc-tech-blog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TannerCarter/mvc-tech-blog/issues"
+  },
+  "homepage": "https://github.com/TannerCarter/mvc-tech-blog#readme",
   "dependencies": {
-    "bcryptjs": "2.4.3",
-    "compression": "^1.7.4",
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
     "dotenv": "^10.0.0",
-    "express": "^4.16.3",
-    "express-handlebars": "^5.1.0",
-    "express-session": "^1.16.1",
-    "moment": "^2.27.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^1.6.4",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.12",
     "sequelize": "^6.6.5",
     "tailwindcss": "^2.2.7"
   }

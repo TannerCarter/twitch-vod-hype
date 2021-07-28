@@ -1,4 +1,4 @@
--- Drops the good_reader_db if it exists currently --
-DROP DATABASE IF EXISTS cold_war_db;
--- Creates the "good_reader_db" database --
-CREATE DATABASE cold_war_db;
+-- Drop Database if exists --
+DROP DATABASE IF EXISTS mvc_tech_blog_db;
+-- Create Database --
+CREATE DATABASE mvc_tech_blog_db;

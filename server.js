@@ -1,53 +1,46 @@
-var express = require("express");
-var path = require("path");
-var session = require("express-session");
-var passport = require("./config/passport");
-var compression = require("compression");
+const express = require("express");
+const routes = require("./controllers");
+const sequelize = require("./config/connection");
+const path = require("path");
 
-// Express
+const helpers = require("./utils/helpers");
 
-var app = express();
-var PORT = process.env.PORT || 3001;
+const exphbs = require("express-handlebars");
+const hbs = exphbs.create({ helpers });
 
-// compression
-app.use(compression());
+const session = require("express-session");
 
-// Requiring our models for syncing
-var db = require("./models");
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
+const sess = {
+  secret: "secrets4life",
+  cookie: {
+    // Session will automatically expire in 10 minutes
+    expires: 10 * 60 * 1000,
+  },
+  resave: true,
+  rolling: true,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
+
+app.use(session(sess));
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
-// Handlebars.
-var exphbs = require("express-handlebars");
-
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main",
-  })
-);
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
-//public
-app.use(express.static("public"));
+app.use(routes);
 
-app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-);
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Routes
-//Tima to add in routing once routes configured below this.
-
-//Routes Here
-
-// Syncing our sequelize models and then starting our Express app
-
-db.sequelize.sync().then(function () {
-  app.listen(PORT, function () {
-    console.log("Listening on port %s.", PORT, PORT);
-  });
+// turn on connection to db and server
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log("Now listening"));
 });
