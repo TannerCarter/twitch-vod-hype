@@ -1,4 +1,4 @@
 -- Drop Database if exists --
-DROP DATABASE IF EXISTS mvc_tech_blog_db;
+DROP DATABASE IF EXISTS cold_war_db;
 -- Create Database --
-CREATE DATABASE mvc_tech_blog_db;
+CREATE DATABASE cold_war_db;
