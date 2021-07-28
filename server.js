@@ -42,7 +42,8 @@ app.use(passport.session());
 // Routes
 //Tima to add in routing once routes configured below this.
 
-//Routes Here
+require("./controller/html-routes.js")(app);
+require("./controller/user-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 
