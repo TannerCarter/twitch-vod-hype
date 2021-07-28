@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cold War Forum</title>
+  <!-- Tailwind -->
+  <link rel="stylesheet" href="/css/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+  <div class="wrapper">
+    <header>
+        <h1 class="">Cold War Forum</h1>
+        <nav class="navbar">
+            {{#if loggedIn}}
+            <a href="/" class="navbar-item">Home</a>
+            <a href="/dashboard" class="navbar-item">Dashboard</a>
+            <a href="/dashboard/create/" class="navbar-item">Blog</a>
+            <button id="logout" class="button">Logout</button>
+            {{else}}
+            <a href="/" class="navbar-item">Home</a>
+            <a href="/login" class="button">Login</a>
+            {{/if}}
+        </nav>
+    </header>
+
+    <main>
+            {{{ body }}}
+    </main>
+
+    <footer class="footer rows">
+        <div class="row-is-full content">
+            <p>
+            {{#if loggedIn}}
+            
+            &copy; Cold War Forum, Inc.
+            {{else}}
+            &copy; Cold War Forum, Inc.
+            {{/if}}
+            </p>
+        </div>
+      
+  </div>
+    </footer>
+  </div>
+
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
+</body>
+
+</html>
