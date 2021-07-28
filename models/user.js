@@ -1,9 +1,31 @@
-var bcrypt = require("bcryptjs");
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+const bcrypt = require("bcrypt");
 
-module.exports = function (sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    name: DataTypes.STRING,
-    // The email cannot be null, and must be a proper email before creation
+// create our User model
+class User extends Model {
+  // set up method to run on instance data (per user) to check password
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
+
+// define table columns and configuration
+User.init(
+  {
+    // define an id column
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    // define a username column
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    // define an email column
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -12,35 +34,38 @@ module.exports = function (sequelize, DataTypes) {
         isEmail: true,
       },
     },
-    // The password cannot be null
+    // define a password column
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [4],
+      },
     },
-    preferences1: DataTypes.STRING,
-    preferences2: DataTypes.STRING,
-    preferences3: DataTypes.STRING,
-    createdAt: {
-      type: DataTypes.DATE,
-      defaultValue: new Date(),
+  },
+  {
+    hooks: {
+      // set up beforeCreate lifecycle "hook" functionality
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      // set up beforeUpdate lifecycle "hook" functionality
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
+        return updatedUserData;
+      },
     },
-    updatedAt: {
-      type: DataTypes.DATE,
-      defaultValue: new Date(),
-    },
-  });
 
-  User.prototype.validPassword = function (password) {
-    return bcrypt.compareSync(password, this.password);
-  };
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "user",
+  }
+);
 
-  User.addHook("beforeCreate", function (user) {
-    user.password = bcrypt.hashSync(
-      user.password,
-      bcrypt.genSaltSync(10),
-      null
-    );
-  });
-
-  return User;
-};
+module.exports = User;
