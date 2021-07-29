@@ -1,20 +1,47 @@
-    <div class="">
-        <a href="/dashboard/create/"><button id="create-blog" class="button is-primary ">Create blog</button></a>
-        
-        <h2 class="title">Dashboard: Your blogs</h2><hr>
-{{#if blogs.length}}
+<h2 class="title text-center text-4xl">Stats Page:</h2><hr />
+
+<div class="text-center mt-48 bg-black-100">
+  <div
+    style="margin:0px;width:calc(100% - 200px);max-width:100%;min-width:260px;"
+    class="flex text-center"
+  >
+
+    <div class="search_block">
+      <div
+        style="height:30px;width:90px;background:#fff;border-right:2px solid #ddd;float:left;padding:0px;overflow:hidden;;"
+      >
+        <img
+          src="https://codstats.net/images/icons/10.png"
+          style="width: 20px; margin: 5px 0px 5px 5px; opacity: 0.2;"
+          id="platform2"
+        />
+        <img
+          src="https://codstats.net/images/icons/20.png"
+          style="width: 20px; margin: 5px 0px 5px 5px; opacity: 0.2;"
+          id="platform1"
+        />
+        <img
+          src="https://codstats.net/images/icons/30.png"
+          style="width: 20px; margin: 5px 0px 5px 5px; opacity: 1;"
+          id="platform3"
+        />
+        <img
+          src="https://codstats.net/images/icons/40.png"
+          style="width: 20px; margin: 5px 0px 5px 5px; opacity: 0.2; display: none;"
+          id="platform4"
+        />
+      </div>
+
+      <input
+        type="text"
+        style="width:calc(100% - 92px);height:30px;background:#fff;border:0px;padding:10px;float:left; "
+        placeholder="Enter Username (Platform ID)"
+        id="search_name"
+        onclick="change_platform(selected_platform);"
+      />
+
     </div>
 
-    {{#each blogs as |blog|}}
-        {{> blog-info blog}}
-        
-            <a href="/dashboard/edit/{{blog.id}}"><button class="button">Edit Blog</button></a>
-        </div>
-    {{/each}}
-
-{{else}}
-<h6 class="">You do not have any blogs</h6>
-
-{{/if}}
-
-
+    <a><button class="bg-blue-500 shadow">SEARCH</button></a>
+  </div>
+</div>
