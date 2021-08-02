@@ -1,4 +1,4 @@
-async function signupFormHandler(event) {
+/*async function signupFormHandler(event) {
   event.preventDefault();
 
   const streamer = document.querySelector("#stream").value.trim();
@@ -24,4 +24,4 @@ async function signupFormHandler(event) {
 
 document
   .querySelector(".streamGoat")
-  .addEventListener("submit", signupFormHandler);
+  .addEventListener("submit", signupFormHandler);*/

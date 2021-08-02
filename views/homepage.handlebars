@@ -9,13 +9,14 @@
   class="flex float-right text-3xl mt-24 mr-48 streamGoat"
   style="border-bottom:1px solid;"
 >Clips</div>
-<p class="" id="stream"></p>
+
 <!-- Insert Pulled Data Here -->
 
 {{#each blogs as |blog|}}
 
   <div>{{blog}}</div>
-
+  {{user_name}}
+  <p class="" id="stream"></p>
 {{/each}}
 
 <script src="/js/streams.js"></script>

@@ -5,26 +5,9 @@ class Blog extends Model {}
 //Blogs have id, title, content, dates, user ids
 Blog.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    title: {
+    game_name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    blog_content: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
     },
   },
   {

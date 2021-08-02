@@ -1,4 +1,4 @@
-require("dotenv").config();
+/*require("dotenv").config();
 const router = require("express").Router();
 const fetch = require("node-fetch");
 const axios = require("axios");
@@ -27,7 +27,7 @@ const axios = require("axios");
 //tokenReq(process.env.GET_TOKEN, (res) => {
 //  console.log(res);
 //});
-router.post("/", (req, res) => {
+/*router.post("/", (req, res) => {
   console.log("======================");
 
   fetch(process.env.STREAMS_URL, {
@@ -46,7 +46,7 @@ router.post("/", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
+});*/
 
 /*router.post("/", async (req, res) => {
   var options = {
