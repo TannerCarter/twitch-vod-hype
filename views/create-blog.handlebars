@@ -1,29 +1,19 @@
 <section>
-  <a href="/dashboard" class="right"> &larr; Back To Dashboard</a>
-  <h2 class="title text-center text-4xl">Create a New Cod Blog Post</h2><hr />
+  <a href="/dashboard" class="right"> &larr; Back To Favorites</a>
+  <h2 class="title text-center text-4xl bg-purple-400 font-bold">List of Current
+    Top Games:</h2><hr />
 
-  <form class="new-blog-form text-center mt-48">
-    <div>
-      <label for="blog-title">Title Your Cod Blog:</label>
-      <input
-        class="input"
-        type="text"
-        id="blog-title"
-        name="blog-title"
-        placeholder="Blog Title"
-      />
-    </div>
-    <div>
-      <label for="blog-content">Cod Blog Content:</label>
-      <input
-        class="textarea is-large"
-        id="blog-content"
-        name="blog-content"
-        placeholder="Blog content here"
-      />
-    </div>
-    <a><button type="submit" class="button bg-green-500">Post Blog</button></a>
-  </form>
+  <div
+    class="float-left mt-24 ml-48 text-3xl flex"
+    id="Games"
+    style="border-bottom:1px solid;"
+  >Game Title</div>
+  <div
+    class="float-right mt-24 mr-48 text-3xl flex"
+    id="gameThumb"
+    style="border-bottom:1px solid;"
+  >Covers</div>
+
 </section>
 
 <script src="/js/add-blog.js"></script>

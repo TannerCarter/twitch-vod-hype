@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Blog, User, Comment } = require("../models");
+const { Blog, User, Comment, Stream } = require("../models");
+//const fetch = require("node-fetch");
 
 router.get("/", (req, res) => {
   console.log(req.session);
@@ -26,6 +27,7 @@ router.get("/", (req, res) => {
       const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
       res.render("homepage", {
         blogs,
+        stream,
         loggedIn: req.session.loggedIn,
       });
     })
