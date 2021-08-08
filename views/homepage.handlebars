@@ -3,10 +3,12 @@
 <div
   class="flex float-left text-3xl bg-black-500 mt-24 ml-48"
   style="border-bottom:1px solid;"
+  id="streamName"
 >Streamer</div>
-<p class="" id=""></p><!-- Insert Pulled Data Here -->
+
 <div
-  class="flex float-right text-3xl mt-24 mr-48 streamGoat"
+  class="flex float-right text-3xl mt-24 mr-48"
+  id="streamClip"
   style="border-bottom:1px solid;"
 >Clips</div>
 
@@ -15,8 +17,7 @@
 {{#each blogs as |blog|}}
 
   <div>{{blog}}</div>
-  {{user_name}}
-  <p class="" id="stream"></p>
+
 {{/each}}
 
 <script src="/js/streams.js"></script>
