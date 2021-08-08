@@ -193,3 +193,21 @@ footer {
   display: flex;
   flex-direction: column;
 }
+.nameStyle1 {
+  display: flex float-left;
+  padding-top: 15%;
+  padding-left: 17%;
+  font-size: 24px;
+}
+.nameStyle2 {
+  display: flex float-left;
+  padding-top: 15%;
+  padding-left: 17%;
+  font-size: 24px;
+}
+.nameStyle3 {
+  display: flex float-left;
+  padding-top: 15%;
+  padding-left: 17%;
+  font-size: 24px;
+}
