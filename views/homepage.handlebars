@@ -1,11 +1,23 @@
+<h6 class="title streams text-center text-4xl bg-purple-400 font-bold">Top
+  Streams Here:</h6>
+<div
+  class="flex float-left text-3xl bg-black-500 mt-24 ml-48"
+  style="border-bottom:1px solid;"
+  id="streamName"
+>Streamer</div>
+
+<div
+  class="flex float-right text-3xl mt-24 mr-48"
+  id="streamClip"
+  style="border-bottom:1px solid;"
+>Clips</div>
+
+<!-- Insert Pulled Data Here -->
 
 {{#each blogs as |blog|}}
 
-{{> blog-info blog }}
-</div>
+  <div>{{blog}}</div>
 
-{{else}}
-<h6 class="codStore text-center">Cod Store Here</h6>
 {{/each}}
 
-<script src="/js/codStore.js"></script>
+<script src="/js/streams.js"></script>
