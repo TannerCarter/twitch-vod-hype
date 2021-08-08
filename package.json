@@ -1,5 +1,5 @@
 {
-  "name": "mvc-tech-blog",
+  "name": "twitch-vod-hype",
   "version": "1.0.0",
   "description": "",
   "main": "nodemon server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TannerCarter/mvc-tech-blog.git"
+    "url": "git+https://github.com/TannerCarter/twitch-vod-hype.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tanner | Tima",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TannerCarter/mvc-tech-blog/issues"
+    "url": "https://github.com/TannerCarter/twitch-vod-hype/issues"
   },
-  "homepage": "https://github.com/TannerCarter/mvc-tech-blog#readme",
+  "homepage": "https://github.com/TannerCarter/twitch-vod-hype#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",

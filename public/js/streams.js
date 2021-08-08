@@ -27,8 +27,7 @@ async function streams() {
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {
-    console.log("Complete");
-    console.log(response);
+    console.log("Tanner Is Goated!!!");
   } else {
     alert(response.statusText);
   }
