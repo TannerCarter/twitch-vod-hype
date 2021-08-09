@@ -7,6 +7,13 @@ The goal of the VOD on demand to have an easy and simple way of finding the top 
 
 # Table of Contents
 
+- [Technologies Used](#Technologies)
+- [Links](#Links)
+- [Instructions](#Instructions)
+- [Contributors](#Contributors)
+- [License](#license)
+- [Questions](#questions)
+
 # Technologies Used
 - Node.js
 - Express.js
