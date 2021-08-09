@@ -7,7 +7,7 @@ The goal of the VOD on demand to have an easy and simple way of finding the top 
 
 # Table of Contents
 
-- [Technologies Used](#Technologies)
+- [Technologies Used](#Technologies-used)
 - [Links](#Links)
 - [Instructions](#Instructions)
 - [Contributors](#Contributors)
