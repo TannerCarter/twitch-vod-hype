@@ -20,7 +20,8 @@ https://twitch-vod-hype.herokuapp.com/
 # Instructions
 
 # Contributors
-@timanlemvo
+Github: [Tanner Carter](https://github.com/TannerCarter)
+Github: [Tima Nlemvo](https://github.com/timanlemvo)
 
 # Questions
 
