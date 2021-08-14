@@ -1,28 +1,36 @@
-<h6 class="title streams text-center text-4xl bg-purple-400 font-bold">Top
-  Streams Here:</h6>
+<h6 class="title streamsTitle text-center text-4xl font-bold">
+  Top Live Streams:</h6>
 <!-- Titles Start Here -->
 <div class="grid grid-cols-3 mt-12 text-3xl" style="border-bottom:1px solid;">
   <div>Streamer</div>
 
-  <div>Info</div>
+  <div>About</div>
 
-  <div>Clips</div>
+  <div>Screenshot</div>
 
 </div>
 <!-- Titles End Here -->
 {{#each streams as |stream|}}
-  <div class="grid grid-cols-3 text-2xl my-10">
+  <div class="grid grid-cols-3 my-10">
 
     <!-- Stream 1 Styles Here -->
     <div id="streamName1">
-      <p>
+      <p class="text-2xl">
         {{stream.user_name}}
       </p>
     </div>
-    <div id="streamView1"><p>{{stream.viewer_count}}</p></div>
-    <div id="clipView1"><p><a href="https://twitch.tv/{{stream.user_name}}"><img
+    <div id="streamView1">
+      <p>Game: {{stream.game_name}}</p>
+      <p>Current Viewers: {{stream.viewer_count}}</p>
+    </div>
+    <div id="clipView1">
+
+      <p class="clipView"><a href="https://twitch.tv/{{stream.user_name}}"><img
             src="{{stream.thumbnail_url}}"
-          /></a></p></div>
+          /></a>
+      </p>
+      <p class="text-gray-400">{{stream.title}}</p>
+    </div>
   </div>
 
 {{/each}}

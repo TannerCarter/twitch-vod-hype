@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clips on Demand</title>
+  <title>Streamer on Demand</title>
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
   <div class="wrapper shadow-2xl">
-    <header class="bg-gray-300">
-        <h1 class="text-lg h-12 ml-36">Clips on Demand</h1>
+    <header class="">
+        <h1 class="text-3xl h-12 ml-36">Streamer on Demand</h1>
         <nav class="navbar flex">
             {{#if loggedIn}}
-            <a href="/" class="navbar-item mr-6"><button class="bg-gray-300 hover:bg-gray-400 text-gray-800 hover:text-white font-bold py-2 px-4 rounded-l">Home</button></a>
-            <a href="/dashboard" class="navbar-item mr-6"><button class="bg-gray-300 hover:bg-gray-400 text-gray-800 hover:text-white font-bold py-2 px-4 rounded">Saved Clips</button></a>
-            <a href="/dashboard/create/" class="navbar-item mr-6"><button class="bg-gray-300 hover:bg-gray-400 text-gray-800 hover:text-white font-bold py-2 px-4 rounded">Top Current Games</button></a>
-            <a><button id="logout" class="button mr-6 bg-gray-300 hover:bg-gray-400 text-gray-800 hover:text-white font-bold py-2 px-4 rounded-r">Logout</button></a>
+            <a href="/" class="navbar-item mr-6"><button class="homeBtn font-bold py-2 px-4 rounded-l">Home</button></a>
+            <a href="/dashboard" class="navbar-item mr-6"><button class="homeBtn font-bold py-2 px-4 rounded">Saved Clips</button></a>
+            <a href="/dashboard/create/" class="navbar-item mr-6"><button class="homeBtn font-bold py-2 px-4 rounded">Search Clips</button></a>
+            <a class="navbar-item mr-2"><button id="logout" class="logoutBtn font-bold py-2 px-4 rounded-r">Logout</button></a>
             {{else}}
-            <a href="/" class="navbar-item mr-4 "><button class="bg-gray-300 hover:bg-gray-400 text-gray-800 hover:text-white font-bold py-2 px-4 rounded-l">Home</button></a>
-            <a href="/login" class="button mr-4"><button class="bg-gray-300 hover:bg-gray-400 text-gray-800 hover:text-white font-bold py-2 px-4 rounded-r">Login</button></a>
+            <a href="/" class="navbar-item mr-4 "><button class="homeBtn font-bold py-2 px-4 rounded-l">Home</button></a>
+            <a href="/login" class="navbar-item mr-4"><button class="loginBtn font-bold py-2 px-4 rounded-r">Login</button></a>
             {{/if}}
         </nav>
     </header>
@@ -35,9 +35,9 @@
             <p>
             {{#if loggedIn}}
             
-            &copy; 2021 Clips on Demand, LLC.
+            &copy; 2021 Streamer on Demand, LLC.
             {{else}}
-            &copy; 2021 Clips on Demand, LLC.
+            &copy; 2021 Streamer on Demand, LLC.
             {{/if}}
             </p>
         </div>
