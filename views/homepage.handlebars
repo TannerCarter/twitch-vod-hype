@@ -16,13 +16,13 @@
     <!-- Stream 1 Styles Here -->
     <div id="streamName1">
       <p>
-        <a href="https://twitch.tv/{{stream.user_name}}">{{stream.user_name}}
-        </a>
-
+        {{stream.user_name}}
       </p>
     </div>
     <div id="streamView1"><p>{{stream.viewer_count}}</p></div>
-    <div id="clipView1"><p><img src="{{stream.thumbnail_url}}" /></p></div>
+    <div id="clipView1"><p><a href="https://twitch.tv/{{stream.user_name}}"><img
+            src="{{stream.thumbnail_url}}"
+          /></a></p></div>
   </div>
 
 {{/each}}
