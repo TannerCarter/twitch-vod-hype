@@ -1,13 +1,20 @@
 <section>
 
-  <h2 class="title text-center text-4xl bg-purple-400 font-bold">List of Current
-    Top Games:</h2><hr />
+  <h2 class="title searchTitle text-center text-4xl font-bold">Search by
+    Streamer</h2><hr />
+
+  <div class="searchStreamer text-center mt-12 ml-64 flex">
+    <input type="text" placeholder="Streamer Username" minlength="2" />
+    <button type="submit" class="searchStream">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
 
   <div
     class="float-left mt-24 ml-48 text-3xl flex"
     id="Games"
     style="border-bottom:1px solid;"
-  >Game Title</div>
+  ></div>
   <div
     class="float-right mt-24 mr-48 text-3xl flex"
     id="gameThumb"

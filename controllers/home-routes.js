@@ -50,7 +50,7 @@ router.get("/", async (req, res) => {
             ...stream,
             thumbnail_url: stream.thumbnail_url.replace(
               "{width}x{height}",
-              "200x100"
+              "400x200"
             ),
           };
         }),
