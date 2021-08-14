@@ -82,31 +82,6 @@ h1 {
   align-items: center;
   color: black;
 }
-article {
-  align-items: center;
-}
-.search_block_button {
-  flex-grow: 1;
-  margin-top: 4px;
-  width: 50px;
-  background: #52bafe;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  color: #0a2739;
-  font-size: 12px;
-  display: inline-block;
-  font-weight: bold;
-  cursor: hand;
-  border-radius: 0px 5px 5px 0px;
-}
-.search_block {
-  flex-grow: 1;
-  min-width: calc(100% - 100px);
-  overflow: auto;
-  margin-top: 4px;
-  border-radius: 5px 0px 0px 5px;
-}
 
 main {
   flex: 1;
@@ -198,12 +173,5 @@ footer {
 /*Usernames End*/
 
 /*Viewers Start*/
-.nameStyle {
-  overflow: hidden;
-}
-
-.viewStyle {
-  overflow: hidden;
-}
 
 /*Viewers End*/

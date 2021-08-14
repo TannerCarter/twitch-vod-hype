@@ -3,7 +3,24 @@ const sequelize = require("../config/connection");
 const { Blog, User, Comment } = require("../models");
 const fetch = require("node-fetch");
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
+  let streams;
+  try {
+    const url = fetch(process.env.STREAMS_URL, {
+      method: "GET",
+      headers: {
+        "Client-ID": process.env.CLIENT_ID,
+        Authorization: "Bearer " + process.env.access_token,
+      },
+    });
+    console.log(res);
+    const fetch_response = await url;
+    const json = await fetch_response.json();
+    streams = json.data;
+  } catch (error) {
+    console.log(error);
+  }
+
   console.log(req.session);
 
   Blog.findAll({
@@ -28,6 +45,16 @@ router.get("/", (req, res) => {
 
       res.render("homepage", {
         blogs,
+        streams: streams.map((stream) => {
+          return {
+            ...stream,
+            thumbnail_url: stream.thumbnail_url.replace(
+              "{width}x{height}",
+              "200x100"
+            ),
+          };
+        }),
+
         loggedIn: req.session.loggedIn,
       });
     })
@@ -98,16 +125,21 @@ router.get("/blog/:id", (req, res) => {
 });
 
 router.get("/streams", async (request, response) => {
-  const url = fetch(process.env.STREAMS_URL, {
-    method: "GET",
-    headers: {
-      "Client-ID": process.env.CLIENT_ID,
-      Authorization: "Bearer " + process.env.access_token,
-    },
-  });
-  const fetch_response = await url;
-  const json = await fetch_response.json();
-  response.json(json);
+  try {
+    const url = fetch(process.env.STREAMS_URL, {
+      method: "GET",
+      headers: {
+        "Client-ID": process.env.CLIENT_ID,
+        Authorization: "Bearer " + process.env.access_token,
+      },
+    });
+    console.log(response);
+    const fetch_response = await url;
+    const json = await fetch_response.json();
+    response.json(json);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;

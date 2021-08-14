@@ -6,6 +6,7 @@ async function streams() {
   if (response.ok) {
     console.log("Tanner Is Goated!!!");
     console.log(response);
+    JSON.stringify(response);
     response.json().then(function (data) {
       console.log(data);
 
